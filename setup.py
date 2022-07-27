@@ -54,9 +54,9 @@ setup(
     include_package_data=True,
     install_requires=[
         "importlib-metadata ; python_version<'3.8'",
-        "eth-ape>=0.3.0,<0.4.0",
+        "eth-ape>=0.4.0,<0.5.0",
     ],
-    python_requires=">=3.7.2,<3.11",
+    python_requires=">=3.7.2,<4",
     extras_require=extras_require,
     py_modules=["ape_bsc"],
     license="Apache-2.0",
@@ -65,7 +65,7 @@ setup(
     packages=find_packages(exclude=["tests", "tests.*"]),
     package_data={"ape_bsc": ["py.typed"]},
     classifiers=[
-        "Development Status :: 5 - Production/Stable",
+        "Development Status :: 3 - Alpha",
         "Intended Audience :: Developers",
         "License :: OSI Approved :: Apache Software License",
         "Natural Language :: English",

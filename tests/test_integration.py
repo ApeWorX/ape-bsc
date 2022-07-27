@@ -1,12 +1,24 @@
 EXPECTED_OUTPUT = """
-arbitrum
+bsc
 ├── mainnet
-│   ├── alchemy
 │   └── geth  (default)
 ├── testnet
-│   ├── alchemy  (default)
-│   └── geth
+│   └── geth  (default)
 └── local  (default)
+    └── test  (default)
+ethereum  (default)
+├── mainnet
+│   └── geth  (default)
+├── ropsten
+│   └── geth  (default)
+├── kovan
+│   └── geth  (default)
+├── rinkeby
+│   └── geth  (default)
+├── goerli
+│   └── geth  (default)
+└── local  (default)
+    ├── geth
     └── test  (default)
 """.strip()
 
@@ -16,7 +28,7 @@ def assert_rich_text(actual: str, expected: str):
     The output from `rich` causes a bunch of extra spaces to
     appear at the end of each line. For easier testing, we remove those here.
     """
-    actual = f"arbitrum{actual.split('arbitrum')[-1]}"
+    actual = f"bsc{actual.split('bsc')[-1]}"
     expected = expected.strip()
     lines = actual.split("\n")
     new_lines = []
