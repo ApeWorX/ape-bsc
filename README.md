@@ -49,9 +49,3 @@ Installing this plugin adds support for the Binance Smart Chain ecosystem:
 ```bash
 ape console --network bsc:mainnet
 ```
-
-## Development
-
-This project is in development and should be considered a beta.
-Things might not be in their final state and breaking changes may occur.
-Comments, questions, criticisms and pull requests are welcomed.
