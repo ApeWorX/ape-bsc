@@ -25,6 +25,7 @@ def networks():
     # NOTE: This works for development providers, as they get chain_id from themselves
     yield "bsc", LOCAL_NETWORK_NAME, NetworkAPI
     yield "bsc", "mainnet-fork", NetworkAPI
+    yield "bsc", "testnet-fork", NetworkAPI
 
 
 @plugins.register(plugins.ProviderPlugin)
