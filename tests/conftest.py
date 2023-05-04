@@ -22,3 +22,14 @@ def runner():
 @pytest.fixture
 def cli():
     return ape_cli
+
+
+@pytest.fixture
+def provider(networks):
+    with networks.bsc.local.use_provider("test"):
+        yield
+
+
+@pytest.fixture
+def account(accounts):
+    return accounts.test_accounts[0]
