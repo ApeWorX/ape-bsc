@@ -11,7 +11,7 @@ extras_require = {
     ],
     "lint": [
         "black>=22.12.0",  # auto-formatter and linter
-        "mypy>=0.991",  # Static type analyzer
+        "mypy>=0.991,<1",  # Static type analyzer
         "flake8>=5.0.4",  # Style linter
         "isort>=5.10.1",  # Import sorting linter
         "types-setuptools",  # Needed due to mypy typeshed
@@ -78,5 +78,6 @@ setup(
         "Programming Language :: Python :: 3.8",
         "Programming Language :: Python :: 3.9",
         "Programming Language :: Python :: 3.10",
+        "Programming Language :: Python :: 3.11",
     ],
 )
