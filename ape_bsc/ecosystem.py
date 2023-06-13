@@ -9,6 +9,7 @@ from ape_ethereum.ecosystem import Ethereum, NetworkConfig
 from ape_ethereum.transactions import DynamicFeeTransaction, StaticFeeTransaction, TransactionType
 from eth_typing import HexStr
 from eth_utils import add_0x_prefix, decode_hex
+from ape.utils import DEFAULT_LOCAL_TRANSACTION_ACCEPTANCE_TIMEOUT
 
 NETWORKS = {
     # chain_id, network_id
@@ -16,11 +17,27 @@ NETWORKS = {
     "testnet": (97, 97),
 }
 
+def _create_network_config(
+    required_confirmations: int = 1, block_time: int = 3, **kwargs
+) -> NetworkConfig:
+    return NetworkConfig(
+        required_confirmations=required_confirmations, block_time=block_time, **kwargs
+    )
+
+
+def _create_local_config(default_provider: Optional[str] = None, **kwargs) -> NetworkConfig:
+    return _create_network_config(
+        required_confirmations=0,
+        default_provider=default_provider,
+        transaction_acceptance_timeout=DEFAULT_LOCAL_TRANSACTION_ACCEPTANCE_TIMEOUT,
+        gas_limit="max",
+        **kwargs,
+    )
 
 class BSCConfig(PluginConfig):
-    mainnet: NetworkConfig = NetworkConfig(required_confirmations=1, block_time=3)
-    testnet: NetworkConfig = NetworkConfig(required_confirmations=1, block_time=3)
-    local: NetworkConfig = NetworkConfig(default_provider="test")
+    mainnet: NetworkConfig = _create_network_config()
+    testnet: NetworkConfig = _create_network_config()
+    local: NetworkConfig = _create_local_config(default_provider="test")
     default_network: str = LOCAL_NETWORK_NAME
 
 
