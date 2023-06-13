@@ -8,9 +8,7 @@ from ape.types import TransactionSignature
 from ape.utils import DEFAULT_LOCAL_TRANSACTION_ACCEPTANCE_TIMEOUT
 from ape_ethereum.ecosystem import Ethereum, NetworkConfig
 from ape_ethereum.transactions import DynamicFeeTransaction, StaticFeeTransaction, TransactionType
-
 from eth_utils.hexadecimal import decode_hex
-
 
 NETWORKS = {
     # chain_id, network_id
