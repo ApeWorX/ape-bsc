@@ -3,8 +3,8 @@ from ape_ethereum.transactions import TransactionType
 
 
 def test_gas_limit(networks):
-    arbitrum = networks.arbitrum
-    assert arbitrum.config.local.gas_limit == "max"
+    bsc = networks.bsc
+    assert bsc.config.local.gas_limit == "max"
 
 
 @pytest.mark.parametrize("type", (0, "0x0"))
