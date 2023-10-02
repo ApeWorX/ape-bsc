@@ -84,7 +84,7 @@ def _get_transaction_type(_type: Optional[Union[int, str, bytes]]) -> Transactio
     if len(suffix) == 1:
         _type = f"{_type.rstrip(suffix)}0{suffix}"
 
-    return TransactionType(add_0x_prefix(HexStr(_type)))
+    return TransactionType(add_0x_prefix(int(HexStr(_type), 0))
 
 
 class ApeBSCError(ApeException):
