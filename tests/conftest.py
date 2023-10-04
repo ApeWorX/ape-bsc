@@ -1,7 +1,5 @@
 import ape
 import pytest
-from ape._cli import cli as ape_cli
-from click.testing import CliRunner
 
 
 @pytest.fixture
@@ -15,16 +13,6 @@ def accounts():
 
 
 @pytest.fixture
-def runner():
-    return CliRunner()
-
-
-@pytest.fixture
-def cli():
-    return ape_cli
-
-
-@pytest.fixture
 def provider(networks):
     with networks.bsc.local.use_provider("test"):
         yield
@@ -33,3 +21,22 @@ def provider(networks):
 @pytest.fixture
 def account(accounts):
     return accounts.test_accounts[0]
+
+
+@pytest.fixture
+def second_account(accounts):
+    return accounts.test_accounts[1]
+
+
+@pytest.fixture
+def bsc(networks):
+    return networks.bsc
+
+
+@pytest.fixture
+def eth_tester_provider():
+    if not ape.networks.active_provider or ape.networks.provider.name != "test":
+        with ape.networks.bsc.local.use_provider("test") as provider:
+            yield provider
+    else:
+        yield ape.networks.provider
