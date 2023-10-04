@@ -13,12 +13,6 @@ def accounts():
 
 
 @pytest.fixture
-def provider(networks):
-    with networks.bsc.local.use_provider("test"):
-        yield
-
-
-@pytest.fixture
 def account(accounts):
     return accounts.test_accounts[0]
 
