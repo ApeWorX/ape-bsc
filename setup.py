@@ -10,8 +10,8 @@ extras_require = {
         "hypothesis>=6.2.0,<7.0",  # Strategy-based fuzzer
     ],
     "lint": [
-        "black>=23.9.1,<24",  # auto-formatter and linter
-        "mypy>=1.5.1,<2",  # Static type analyzer
+        "black>=23.11.0,<24",  # auto-formatter and linter
+        "mypy>=1.7.0,<2",  # Static type analyzer
         "flake8>=6.1.0,<7",  # Style linter
         "isort>=5.10.1,<6",  # Import sorting linter
         "types-setuptools",  # Needed due to mypy typeshed
@@ -57,7 +57,7 @@ setup(
     url="https://github.com/ApeWorX/ape-bsc",
     include_package_data=True,
     install_requires=[
-        "eth-ape>=0.6.0,<0.7",
+        "eth-ape>=0.7.0,<0.8",
     ],
     python_requires=">=3.8,<4",
     extras_require=extras_require,
