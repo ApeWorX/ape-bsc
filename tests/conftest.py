@@ -27,7 +27,7 @@ def bsc(networks):
     return networks.bsc
 
 
-@pytest.fixture
+@pytest.fixture(autouse=True)
 def eth_tester_provider():
     if not ape.networks.active_provider or ape.networks.provider.name != "test":
         with ape.networks.bsc.local.use_provider("test") as provider:
