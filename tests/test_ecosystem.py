@@ -10,7 +10,7 @@ def test_gas_limit(bsc):
 @pytest.mark.parametrize(
     "tx_kwargs",
     [
-        {},  # Default is type 0 in Optimism.
+        {},  # Default is type 0 in BSC.
         {"type": 0},
         {"gas_price": 0},
         {"gasPrice": 0},
