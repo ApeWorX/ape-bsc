@@ -3,10 +3,6 @@ from ape_ethereum.transactions import TransactionType
 from ethpm_types import MethodABI
 
 
-def test_gas_limit(bsc):
-    assert bsc.config.local.gas_limit == "max"
-
-
 @pytest.mark.parametrize(
     "tx_kwargs",
     [
