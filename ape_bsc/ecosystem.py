@@ -27,6 +27,8 @@ class BSCConfig(BaseEthereumConfig):
 
 
 class BSC(Ethereum):
+    fee_token_symbol = "BNB"
+
     @property
     def config(self) -> BSCConfig:  # type: ignore[override]
         return cast(BSCConfig, self.config_manager.get_config("bsc"))
