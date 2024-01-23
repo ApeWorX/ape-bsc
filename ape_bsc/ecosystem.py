@@ -1,10 +1,10 @@
-from typing import ClassVar, cast, Dict, Tuple
+from typing import ClassVar, Dict, Tuple, cast
 
 from ape_ethereum.ecosystem import (
     BaseEthereumConfig,
     Ethereum,
     NetworkConfig,
-    create_network_config, create_local_network_config,
+    create_network_config,
 )
 from ape_ethereum.transactions import TransactionType
 
