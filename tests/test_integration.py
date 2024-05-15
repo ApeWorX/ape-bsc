@@ -4,12 +4,12 @@ from click.testing import CliRunner
 
 EXPECTED_OUTPUT = """
 bsc
+├── local  (default)
+│   └── test  (default)
 ├── mainnet
-│   └── geth  (default)
-├── testnet
-│   └── geth  (default)
-└── local  (default)
-    └── test  (default)
+│   └── node  (default)
+└── testnet
+    └── node  (default)
 """.strip()
 
 
@@ -46,8 +46,8 @@ def assert_rich_text(actual: str, expected: str):
 
 def test_networks(runner, cli, bsc):
     # Do this in case local env changed it.
-    bsc.mainnet.set_default_provider("geth")
-    bsc.testnet.set_default_provider("geth")
+    bsc.mainnet.set_default_provider("node")
+    bsc.testnet.set_default_provider("node")
 
-    result = runner.invoke(cli, ["networks", "list"])
+    result = runner.invoke(cli, ("networks", "list"))
     assert_rich_text(result.output, EXPECTED_OUTPUT)
