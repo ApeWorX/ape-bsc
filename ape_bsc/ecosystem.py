@@ -1,4 +1,4 @@
-from typing import ClassVar, Dict, Tuple, cast
+from typing import ClassVar, cast
 
 from ape_ethereum.ecosystem import (
     BaseEthereumConfig,
@@ -21,7 +21,7 @@ def _create_config() -> NetworkConfig:
 
 class BSCConfig(BaseEthereumConfig):
     DEFAULT_TRANSACTION_TYPE: ClassVar[int] = TransactionType.STATIC.value
-    NETWORKS: ClassVar[Dict[str, Tuple[int, int]]] = NETWORKS
+    NETWORKS: ClassVar[dict[str, tuple[int, int]]] = NETWORKS
     mainnet: NetworkConfig = _create_config()
     testnet: NetworkConfig = _create_config()
 
