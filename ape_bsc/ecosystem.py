@@ -30,8 +30,8 @@ class BSCConfig(BaseEthereumConfig):
     testnet: NetworkConfig = _create_config()
 
     # opBNB is really fast, hence the low block time.
-    opBNB: NetworkConfig = _create_config(block_time=1)
-    opBNB_testnet: NetworkConfig = _create_config(block_time=1)
+    opbnb: NetworkConfig = _create_config(block_time=1)
+    opbnb_testnet: NetworkConfig = _create_config(block_time=1)
 
 
 class BSC(Ethereum):
