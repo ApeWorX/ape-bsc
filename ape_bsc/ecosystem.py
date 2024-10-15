@@ -12,8 +12,8 @@ NETWORKS = {
     # chain_id, network_id
     "mainnet": (56, 56),
     "testnet": (97, 97),
-    "opBNB": (204, 204),
-    "opBNB-testnet": (5611, 5611),
+    "opbnb": (204, 204),
+    "opbnb-testnet": (5611, 5611),
 }
 
 
