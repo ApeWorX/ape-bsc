@@ -13,11 +13,14 @@ NETWORKS = {
     "mainnet": (56, 56),
     "testnet": (97, 97),
     "opBNB": (204, 204),
+    "opBNB-testnet": (5611, 5611),
 }
 
 
-def _create_config() -> NetworkConfig:
-    return create_network_config(block_time=3, default_transaction_type=TransactionType.STATIC)
+def _create_config(block_time: int = 3) -> NetworkConfig:
+    return create_network_config(
+        block_time=block_time, default_transaction_type=TransactionType.STATIC
+    )
 
 
 class BSCConfig(BaseEthereumConfig):
@@ -25,7 +28,10 @@ class BSCConfig(BaseEthereumConfig):
     NETWORKS: ClassVar[dict[str, tuple[int, int]]] = NETWORKS
     mainnet: NetworkConfig = _create_config()
     testnet: NetworkConfig = _create_config()
-    opBNB: NetworkConfig = _create_config()
+
+    # opBNB is really fast, hence the low block time.
+    opBNB: NetworkConfig = _create_config(block_time=1)
+    opBNB_testnet: NetworkConfig = _create_config(block_time=1)
 
 
 class BSC(Ethereum):
