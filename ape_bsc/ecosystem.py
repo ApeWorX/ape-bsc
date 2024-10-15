@@ -12,6 +12,7 @@ NETWORKS = {
     # chain_id, network_id
     "mainnet": (56, 56),
     "testnet": (97, 97),
+    "opBNB": (204, 204),
 }
 
 
@@ -24,6 +25,7 @@ class BSCConfig(BaseEthereumConfig):
     NETWORKS: ClassVar[dict[str, tuple[int, int]]] = NETWORKS
     mainnet: NetworkConfig = _create_config()
     testnet: NetworkConfig = _create_config()
+    opBNB: NetworkConfig = _create_config()
 
 
 class BSC(Ethereum):
