@@ -55,3 +55,10 @@ def test_encode_transaction(tx_type, bsc, eth_tester_provider):
     address = "0x274b028b03A250cA03644E6c578D81f019eE1323"
     actual = bsc.encode_transaction(address, abi, sender=address, type=tx_type)
     assert actual.gas_limit == eth_tester_provider.max_gas
+
+
+def test_is_mainnet(bsc):
+    assert bsc.mainnet.is_mainnet
+    assert bsc.opbnb.is_mainnet
+    assert not bsc.testnet.is_mainnet
+    assert not bsc.opbnb_testnet.is_mainnet
