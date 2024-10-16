@@ -17,9 +17,11 @@ NETWORKS = {
 }
 
 
-def _create_config(block_time: int = 3) -> NetworkConfig:
+def _create_config(block_time: int = 3, **kwargs) -> NetworkConfig:
     return create_network_config(
-        block_time=block_time, default_transaction_type=TransactionType.STATIC
+        block_time=block_time,
+        default_transaction_type=TransactionType.STATIC,
+        **kwargs,
     )
 
 
@@ -30,7 +32,7 @@ class BSCConfig(BaseEthereumConfig):
     testnet: NetworkConfig = _create_config()
 
     # opBNB is really fast, hence the low block time.
-    opbnb: NetworkConfig = _create_config(block_time=1)
+    opbnb: NetworkConfig = _create_config(block_time=1, is_mainnet=True)
     opbnb_testnet: NetworkConfig = _create_config(block_time=1)
 
 
