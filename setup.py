@@ -11,7 +11,7 @@ extras_require = {
     ],
     "lint": [
         "black>=24.10.0,<25",  # Auto-formatter and linter
-        "mypy>=1.12.0,<2",  # Static type analyzer
+        "mypy>=1.13.0,<2",  # Static type analyzer
         "types-setuptools",  # Needed for mypy type shed
         "flake8>=7.1.1,<8",  # Style linter
         "flake8-breakpoint>=1.1.0,<2",  # Detect breakpoints left in code
@@ -60,7 +60,7 @@ setup(
     url="https://github.com/ApeWorX/ape-bsc",
     include_package_data=True,
     install_requires=[
-        "eth-ape>=0.8.1,<0.9",
+        "eth-ape>=0.8.18,<0.9",
     ],
     python_requires=">=3.9,<4",
     extras_require=extras_require,
