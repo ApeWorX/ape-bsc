@@ -52,3 +52,10 @@ def __getattr__(name: str):
     import ape_bsc.ecosystem as module
 
     return getattr(module, name)
+
+
+__all__ = [
+    "NETWORKS",
+    "BSC",
+    "BSCConfig",
+]
