@@ -41,4 +41,4 @@ class BSC(Ethereum):
 
     @property
     def config(self) -> BSCConfig:  # type: ignore[override]
-        return cast(BSCConfig, self.config_manager.get_config("bsc"))
+        return cast("BSCConfig", self.config_manager.get_config("bsc"))
