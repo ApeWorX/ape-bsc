@@ -31,14 +31,14 @@ def assert_rich_text(actual: str, expected: str):
     of the output to handle cases when the test-runner has additional plugins
     installed.
     """
-    expected_lines = [
+    expected_lines = {
         x.replace("└", "").replace("├", "").replace("│", "").strip()
         for x in expected.strip().split("\n")
-    ]
-    actual_lines = [
+    }
+    actual_lines = {
         x.replace("└", "").replace("├", "").replace("│", "").strip()
         for x in actual.strip().split("\n")
-    ]
+    }
 
     for expected_line in expected_lines:
         assert expected_line in actual_lines
